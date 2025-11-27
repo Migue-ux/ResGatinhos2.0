@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": "ca2b",
+      "title": "😻( O emoji e pra testes) Guia Essencial: O Que Fazer Antes de Adotar um Gatinho?",
+      "content": " 3. Enriquecimento Ambiental e Brincadeiras\n------> Gatos são caçadores por natureza e precisam de estímulos:\n->Arranhadores: Essenciais para afiar as unhas e marcar território de forma adequada, poupando seus móveis! Tenha arranhadores verticais e horizontais.\n* **Brinquedos:** Varitas com penas, bolinhas e ratinhos de brinquedo. Reserve um tempo diário para brincar com ele. Isso fortalece o vínculo e ajuda a gastar energia.",
+      "categories": [
+        "Teste"
+      ],
+      "author": "Admin",
+      "date": "26/11/2025",
+      "comments": []
+    },
+    {
+      "id": "ca0f",
+      "title": "teste ",
+      "content": "teste",
+      "categories": [
+        "teste"
+      ],
+      "author": "Admin",
+      "date": "26/11/2025",
+      "comments": []
+    }
+  ],
+  "comments": [
+    {
+      "id": "4cd0",
+      "postId": "94c4",
+      "author": "Visitante",
+      "text": "ola",
+      "date": "26/11/2025, 20:30:41"
+    },
+    {
+      "id": "a914",
+      "postId": "ca2b",
+      "author": "Visitante",
+      "text": "",
+      "date": "26/11/2025, 20:31:46"
+    },
+    {
+      "id": "4d04",
+      "postId": "94c4",
+      "author": "Visitante",
+      "text": "teste 111",
+      "date": "26/11/2025, 20:32:51"
+    },
+    {
+      "id": "56cb",
+      "postId": "94c4",
+      "author": "Visitante",
+      "text": "aaaa",
+      "date": "26/11/2025, 20:34:37"
+    }
+  ],
+  "events": []
+}

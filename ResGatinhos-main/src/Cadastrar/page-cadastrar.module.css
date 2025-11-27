@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  
+  
+  --color-text-light: #333;
+  --color-success: #2a9d8f;
+  --color-error: #e63946;
+  --transition-time: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto; /* permite rolagem normal */
+  min-height: 100vh;
+  overflow-x: hidden; /* evita scroll lateral */
+  scroll-behavior: smooth;
+}
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px; /* aumenta o padding pra dar espaço em telas pequenas */
+  z-index: 1;
+  overflow: visible; /* 👈 permite que o conteúdo ultrapasse se necessário */
+  flex-direction: column;
+}
+
+.page::before {
+  content: "";
+  position: fixed; /* 👈 fixo no fundo, não atrapalha o scroll */
+  top: 0;
+  left: 0;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle at 20% 20%, #ffdb6326 0%, transparent 70%),
+              radial-gradient(circle at 80% 80%, #ffe18f26 0%, transparent 70%);
+  animation: floatBg 20s linear infinite alternate;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.bubbles {
+  position: fixed; /* 👈 fixas no fundo */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+@keyframes floatBg {
+  from { transform: translate(0, 0) rotate(0deg); }
+  to { transform: translate(-50px, -50px) rotate(10deg); }
+}
+
+.bubbles span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: #ac63ff40;
+  bottom: -50px;
+  animation: rise 10s infinite ease-in;
+  border-radius: 50%;
+}
+
+.bubbles span:nth-child(odd) {
+  background: #cd8fff4d;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-120vh) scale(1.6); opacity: 0; }
+}
+
+/* Card principal */
+
+
+.card {
+  position: relative;
+  z-index: 2;
+  background: transparent ;
+  box-shadow: 0 8px 32px rgba(255, 99, 146, 0.25),
+              inset 0 0 15px rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 45px 40px;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  transition: all var(--transition-time) ease;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  animation: fadeInUp 1s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+  margin-bottom: 40px; /* 👈 espaço pro scroll funcionar */
+}
+
+
+/* Título */
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #cf60e7bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.1rem;
+  color: #db9b05;;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+/* Inputs */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+label {
+  color: var(--color-text-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-light);
+  box-shadow: inset 0 1px 6px rgba(255, 255, 255, 0.8),
+              0 3px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #e2b932;
+  box-shadow: 0 0 10px #ffaf0266;
+  background: #fff;
+}
+
+/* Avatar preview */
+.previewImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 8px auto 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mostrar/ocultar senha */
+.inputSenha {
+  position: relative;
+}
+
+.showPasswordBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #911dfdc2;;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.showPasswordBtn:hover {
+  color: #6C1A7E;
+}
+
+/* Botões */
+.registerBtn {
+  width: 100%;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+   background-color: #FDB81D;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 18px #fdba1dc2;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.registerBtn:hover {
+   background-color: #fdba1dc2;
+  transform: scale(1.05);
+}
+
+.backBtn {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 16px;
+  border: 2px solid #fdba1d;
+  background: transparent;
+  color: #000000;;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background-color: #fdba1dc2;
+  color: white;
+}
+
+/* Mensagens */
+.erro {
+  color: var(--color-error);
+  font-weight: 600;
+  margin-top: -5px;
+  text-align: center;
+}
+
+.sucesso {
+  color: var(--color-success);
+  font-weight: 600;
+  margin-top: -5px;
+  text-align: center;
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.checkbox input {
+  accent-color: #6C1A7E;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.checkbox span {
+  color: #6C1A7E;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.checkbox span:hover {
+  color: #6c1a7eaf;
+}
+
+.voltarBtn {
+  position: fixed;
+  top: calc(20px + env(safe-area-inset-top));
+  right: calc(20px + env(safe-area-inset-right));
+  background-color: #FDB81D;
+  color: #fff;
+  border: none;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* garante que fique acima de tudo */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0;
+}
+
+.voltarBtn:hover {
+  background-color: #fdba1db2;
+  transform: scale(1.1);
+}
+
+.voltarBtn:focus-visible {
+  outline: 3px solid #FDB81D;
+  outline-offset: 2px;
+}
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 20px;
+  }
+  .title {
+    font-size: 1.9rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .registerBtn {
+    font-size: 1rem;
+  }
+}
+
+
+/* From Uiverse.io by SpatexDEV */ 
+.addFileBtn button {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #FDB81D;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow:
+    0 4px 6px -1px #488aec31,
+    0 2px 4px -1px #488aec17;
+  transition: all 0.6s ease;
+}
+
+.addFileBtn button:hover {
+  box-shadow:
+    0 10px 15px -3px #488aec4f,
+    0 4px 6px -2px #488aec17;
+}
+
+.addFileBtn button:focus,
+.addFileBtn button:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.addFileBtn button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

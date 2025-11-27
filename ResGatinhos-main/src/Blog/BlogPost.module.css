@@ -1,0 +1,144 @@
+/* --- Variáveis (Mantidas para consistência) --- */
+:root {
+  --text: #f1f1f1;
+  --page-bg: #ffb71dc2;
+  --panel-bg:  linear-gradient(to bottom, #cb8ac4, #cd7ec4, #cf71c5, #d164c4, #d354c4); /* Fundo do card */
+  --accent1: #ffb91d;
+  --accent2: #9a26e7;
+  --shadow-base: rgba(0, 0, 0, 0.5);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --code-bg: #3a404a; /* Novo: Fundo para blocos de código */
+  --muted-color: #a0a0a0; /* Cor para texto secundário (data, etc.) */
+}
+
+/* 1. Contêiner Principal do Post */
+.postWrap {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 40px;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  color: var(--text);
+  box-shadow: 0 12px 35px var(--shadow-base); /* Sombra mais intensa */
+  
+}
+
+/* Responsividade Básica (Mobile) */
+@media (max-width: 768px) {
+    .postWrap {
+        margin: 20px 10px; /* Reduz margens externas */
+        padding: 20px; /* Reduz padding interno */
+        border-radius: 8px; /* Cantos um pouco menores */
+    }
+}
+
+/* 2. Data de Publicação */
+.date {
+  font-size: 1rem; /* Ligeiramente maior */
+  font-style: italic; /* Adicionando itálico */
+  opacity: 0.8; 
+  margin-bottom: 30px;
+  border-left: 4px solid var(--accent1); /* Borda mais grossa */
+  padding-left: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* 3. Conteúdo do Post (Melhorando a Tipografia) */
+.content {
+  /* white-space: pre-wrap; (Manter se for intencional) */
+  line-height: 1.8; /* Aumenta a altura da linha para melhor leitura */
+  font-size: 1.1rem; /* Ligeiramente maior para leitura */
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 30px;
+  
+}
+
+/* Tratamento de Elementos de Destaque dentro do .content */
+
+/* Citações */
+.content blockquote {
+    border-left: 4px solid var(--accent2); /* Roxo */
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: rgba(154, 38, 231, 0.1); /* Fundo roxo suave */
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--muted-color);
+}
+
+/* Blocos de Código (Pré-formatado) */
+.content pre {
+    background: var(--code-bg);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto; /* Garante que o código longo não quebre o layout */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* 4. Seção de Comentários */
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Mais espaçamento */
+  padding-top: 20px;
+}
+
+/* 4.1. Textarea (Campo de Comentário) */
+.commentSection textarea {
+  width: 100%;
+  padding: 18px; /* Mais padding */
+  min-height: 150px;
+  border-radius: 12px;
+  font-size: 1rem;
+  line-height: 1.6;
+  background: var(--page-bg); 
+  color: var(--text);
+  border: 1px solid var(--border-color);
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commentSection textarea:focus {
+  outline: none;
+  border-color: var(--accent2);
+  box-shadow: 0 0 10px rgba(154, 38, 231, 0.7); /* Brilho mais forte */
+}
+
+/* 4.2. Botão de Publicação */
+.commentSection button {
+  align-self: flex-start;
+  background: var(--accent2); 
+  color: var(--text); 
+  padding: 14px 28px; /* Mais preenchimento */
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.commentSection button:hover {
+  background: #a842f7; 
+  transform: translateY(-2px); /* Efeito de elevação mais notável */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.commentSection button:active {
+  transform: translateY(0);
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Padrão */
+}
+/* Deixa os títulos mais ousados */
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; /* Adiciona um leve "aperto" para um visual mais moderno */
+}

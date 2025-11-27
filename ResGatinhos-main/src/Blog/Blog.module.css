@@ -1,0 +1,140 @@
+
+:root {
+  --text-color: #f1f1f1;
+  --panel-bg:  linear-gradient(to bottom, #cb8ac4, #cd7ec4, #cf71c5, #d164c4, #d354c4); /* Fundo do card */
+  --page-bg: #1e2127; /* Fundo do container/página */
+  --accent1: #ffb91d; /* Amarelo/Laranja de destaque */
+  --shadow-base: rgba(160, 56, 230, 0.6);
+  --shadow-hover: rgba(175, 54, 245, 0.74); /* Brilho de hover */
+  --tag-bg: #c193dbc0; /* Fundo mais escuro para tags */
+  --color-bg-light: #d9c1f833;
+   --transition-time: 0.3s;
+   --muted-color: #a0a0a0; /* Cor para texto secundário (data, etc.) */
+}
+
+/* 1. Contêiner Principal */
+.blogContainer {
+  max-width: 1000px; /* Ligeiramente mais largo */
+  margin: 60px auto;
+  padding: 0 20px; /* Adiciona padding lateral para telas pequenas */
+}
+
+/* 2. Grid de Posts */
+.postsGrid {
+  display: grid;
+  /* Garante um mínimo de 280px por coluna, e 1fr para preencher */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px; /* Mais espaçamento */
+}
+
+/* 3. Card Individual de Post */
+.postCard {
+  background: var(--panel-bg);
+  color: var(--text-color);
+  padding: 25px; /* Mais padding */
+  border-radius: 16px; /* Mais arredondado */
+  cursor: pointer;
+  
+  /* Transição em tudo para suavidade e interação */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  
+  /* Sombra inicial mais profunda */
+  box-shadow: 0 6px 20px var(--shadow-base);
+  
+  /* Borda sutil para Dark Mode */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.postCard:hover {
+  /* Remove a transformação scale para um efeito mais limpo */
+  transform: translateY(-8px); 
+  
+  /* Adiciona um brilho sutil com a cor de destaque */
+  box-shadow: 0 12px 30px var(--shadow-base), 0 0 12px var(--shadow-hover);
+}
+
+/* 4. Tags Wrapper */
+.tags {
+  margin-top: 15px; 
+  display: flex;
+  flex-wrap: wrap; /* Garante que as tags quebrem a linha se houver muitas */
+  gap: 8px;
+}
+
+
+.tags span {
+  /* Cores de Dark Mode */
+  background: var(--tag-bg); 
+  color: var(--accent1); /* Cor de destaque para o texto */
+  
+  padding: 5px 12px;
+  border-radius: 20px; /* Formato de pílula */
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 185, 29, 0.3); /* Borda fina da cor do destaque */
+}
+
+
+.postCard .title {
+  
+ font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  color: #dc88eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.postCard .preview {
+  font-size: 1rem;
+  color: var(--muted-color);
+  line-height: 1.5;
+}
+body {
+  html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--color-bg-light);
+  transition: background var(--transition-time) ease, color var(--transition-time) ease;
+}
+}
+
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; 
+}
+
+/* Blog.module.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.createButton {
+    background-color: #ff9900; /* Cor de destaque */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.createButton:hover {
+    background-color: #e68a00;
+}

@@ -1,0 +1,77 @@
+/* --- Variáveis (Para consistência) --- */
+:root {
+  --text-color: #f1f1f1;
+  --dark-text: #212529; /* Texto escuro para fundos claros (Finanças) */
+  --shadow-base: rgba(0, 0, 0, 0.6); /* Sombra mais escura para dark mode */
+}
+
+/* Estilo Base (Melhorado) */
+.badge {
+  display: inline-block;
+  padding: 6px 12px; /* Ligeiramente mais de padding */
+  margin-right: 10px; /* Mais margem */
+  border-radius: 25px; /* Mais arredondado (pílula) */
+  font-size: 0.85rem; /* Ligeiramente maior */
+  font-weight: 700; /* Mais ousado */
+  text-transform: uppercase;
+  letter-spacing: 0.8px; /* Mais espaçamento para elegância */
+  cursor: default;
+  
+  /* Cores padrão */
+  background-color: #555; 
+  color: var(--text-color);
+  
+  /* Sombra sutil para dar profundidade */
+  box-shadow: 0 2px 5px var(--shadow-base);
+  
+  /* Transições suaves */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efeito Hover (Interatividade opcional, útil se o badge for clicável) */
+.badge:hover {
+    /* Um pequeno lift */
+    transform: translateY(-1px);
+    /* Aumenta a sombra */
+    box-shadow: 0 4px 8px var(--shadow-base); 
+}
+
+/* 🚀 Estilos Específicos por Categoria (Com efeito 'glow' sutil) */
+
+.badge-tecnologia {
+  background-color: #007bff; /* Azul */
+  color: var(--text-color);
+  /* Brilho sutil do azul */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4); 
+}
+
+.badge-esportes {
+  background-color: #28a745; /* Verde */
+  color: var(--text-color);
+  /* Brilho sutil do verde */
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.4); 
+}
+
+.badge-lifestyle {
+  background-color: #fd7e14; /* Laranja */
+  color: var(--text-color);
+  /* Brilho sutil do laranja */
+  box-shadow: 0 0 10px rgba(253, 126, 20, 0.4); 
+}
+
+.badge-financas {
+  background-color: #ffc107; /* Amarelo */
+  color: var(--dark-text); /* Texto escuro */
+  /* Brilho sutil do amarelo */
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.6); 
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Padrão */
+}
+/* Deixa os títulos mais ousados */
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; /* Adiciona um leve "aperto" para um visual mais moderno */
+}

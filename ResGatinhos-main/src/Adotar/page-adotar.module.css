@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+:root {
+  --roxo-principal: #6C1A7E;
+  --roxo-claro: #cb72ee;
+  --amarelo-dourado: #F9C449;
+  --bege-claro: #FFFFFF;
+  --branco: #FFFFFF;
+  --preto-suave: #333333;
+  --rosa-escuro: #B04A94;
+  --lilas-medio: #D6A9D9;
+  --amarelo-escuro: #E6A800;
+  --cinza-claro: #EDEDED;
+  --botao: #FFB91D;
+  --voltar: #e63950;
+  --macho: #4B6DFF;
+  --femea: #FF5C87;
+  --rosa: #f16d86;
+
+ 
+  --bg-00: var(--bege-claro);
+  --bg-01: var(--lilas-medio);
+  --surface: var(--branco);
+  --accent-1: var(--botao);
+  --accent-2: var(--roxo-claro);
+  --accent-3: var(--amarelo-dourado);
+  --muted: var(--preto-suave);
+  --text: var(--preto-suave);
+  --soft-shadow: 0 6px 18px rgba(51, 51, 51, 0.08);
+  --card-radius: 12px;
+  --glass: rgba(255,255,255,0.6);
+  --max-width: 1200px;
+  
+  --btn-voltar: var(--voltar);
+  --macho: var(--macho);
+  --femea: var(--femea);
+  
+  
+  
+
+
+}
+
+
+.paginaAdotar, .paginaAdotar * {
+  box-sizing: border-box;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+.topo {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(23,36,48,0.04);
+  background: linear-gradient(90deg, rgba(107,60,255,0.03), rgba(255,106,163,0.02));
+}
+
+.topoInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+
+.topo h1
+{
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 1em;
+  color: #ff758f;
+   font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #cf60e7bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.topo p
+{
+   font-size: 1.1rem;
+  color: #ffb404;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+
+.actionsRow {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 0.28rem 0.6rem;
+  box-shadow: var(--soft-shadow);
+  border: 1px solid rgba(107,106,255,0.06);
+  min-height: 40px;
+}
+
+.iconSearch {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-2);
+  flex: 0 0 18px;
+}
+
+.inputBusca {
+  border: none;
+  outline: none;
+  width: 15em;
+  padding: 0.45rem 0.3rem;
+  font-size: 0.95rem;
+  background: transparent;
+  color: inherit;
+}
+
+
+.btnFiltro {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background-color: #ECCEC3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 22px rgba(107,60,255,0.08);
+}
+.btnFiltro:hover { 
+  background: var(--btn-voltar);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(179, 39, 214, 0.527);
+
+ }
+.btnFiltro svg { width: 16px; height: 16px; }
+
+
+.panelFiltros {
+  max-width: var(--max-width);
+  margin: 0.6rem auto 0;
+  overflow: hidden;
+  transition: max-height 300ms cubic-bezier(.2,.9,.2,1), opacity 220ms;
+  max-height: 0;
+  opacity: 0;
+  border-radius: calc(var(--card-radius) + 2px);
+  box-shadow: 0 12px 30px rgba(22,30,60,0.04);
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,250,255,0.9));
+}
+
+
+.panelFiltros.open {
+  max-height: 320px;
+  opacity: 1;
+}
+
+
+.filtrosInner {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.filtroCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 140px;
+}
+
+
+.label {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+
+.generoBtns {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  
+}
+
+.chip {
+  padding: 0.45rem 0.6rem;
+  border-radius: 5em;
+  width: 5em;
+  height: 5em;
+  border: 2px solid #1724300a;
+  background: linear-gradient(90deg, rgba(255,214,107,0.12), rgba(107,60,255,0.06));
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--muted);
+  transition: transform 160ms ease, box-shadow 120ms ease;
+}
+.chip:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(22,30,60,0.04); }
+
+.activeChip {
+  background: linear-gradient(90deg, #fae903, #e9e068ab);
+  color: var(--text);
+  box-shadow: 0 10px 22px rgba(107,60,255,0.06);
+}
+
+
+.selectWrap { min-width: 160px; }
+.selectFiltro {
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(23,36,48,0.04);
+  background: var(--surface);
+  width: 100%;
+  font-size: 0.92rem;
+  color: inherit;
+}
+
+
+.actionsFiltros {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.btnClear {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btnApply {
+  background-color: #ECCEC3;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.btnApply:hover { 
+  background: var(--btn-voltar);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(179, 39, 214, 0.527);
+ }
+
+
+.container {
+  flex: 1;
+  padding: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.gridGatos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+
+.cardGato {
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease;
+  will-change: transform;
+  border: 1px solid rgba(23,36,48,0.03);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+  .cardGato:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px rgba(22,30,60,0.08);
+  }
+}
+
+
+.cardMedia {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(107,60,255,0.04), rgba(255,106,163,0.03));
+}
+
+
+.imagemGato {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center center;
+  transition: transform 420ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cardGato:hover .imagemGato { transform: scale(1.03); }
+}
+
+
+.cardBody {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+.gatoNome {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.02rem;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+}
+.gatoMeta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* icons color */
+.iconCalendar { width: 15px; height: 15px; color: #8ea0b6; }
+.iconGenderMale { width: 15px; height: 15px; color: #4b6dff; fill: #4b6dff; }
+.iconGenderFemale { width: 15px; height: 15px; color: #ff5c87; fill: #ff5c87; }
+
+.idade {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.18rem 0.36rem;
+  border-radius: 8px;
+  background: rgba(23,36,48,0.03);
+  font-weight: 700;
+  color: var(--muted);
+}
+
+
+.gatoDesc {
+  margin: 0;
+  color: #324b59;
+  font-size: 0.9rem;
+  min-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.cardFooter {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.botaoAdotar {
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg,  var(--accent-1));
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 160ms ease;
+  box-shadow: 0 8px 18px rgba(107,60,255,0.06);
+}
+@media (hover: hover) and (pointer: fine) {
+  .botaoAdotar:hover { transform: translateY(-3px); }
+}
+
+
+.voltarBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff4d6d;
+  color: #fff;
+  border: none;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+.voltarBtn:hover {
+  background: var(--btn-voltar);
+  transform: scale(1.1);
+}
+
+
+.rodape {
+  margin-top: auto;
+  padding: 0.85rem 1rem;
+  background-color: #ffe5ec;
+  border-top: 1px solid rgba(23,36,48,0.03);
+  text-align: center;
+}
+
+.rodapeInner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.creditos { 
+  opacity: 0.9; 
+  font-size: 0.85rem; 
+  text-align: center;
+}
+
+
+
+.skeleton {
+  animation: pulse 1.1s infinite ease-in-out;
+  background: linear-gradient(90deg, rgba(240,240,240,1), rgba(230,230,230,1));
+}
+@keyframes pulse {
+  0% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.65; transform: translateY(-2px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.skelThumb { height: 150px; background: linear-gradient(90deg,#f2f2f2,#e9e9e9); }
+.skelBody { padding: 0.9rem; display:flex; flex-direction:column; gap:0.5rem; }
+.skelLine { height: 10px; border-radius:6px; background: linear-gradient(90deg,#f2f2f2,#e9e9e9); }
+.skelLineShort { width: 45%; height: 12px; border-radius:6px; background: linear-gradient(90deg,#f2f2f2,#e9e9e9); }
+.skelButton { width: 60%; height: 36px; border-radius:8px; background: linear-gradient(90deg,#f2f2f2,#e9e9e9); }
+
+
+.naoEncontrado {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  font-size: 1rem;
+}
+
+
+@media (max-width: 920px) {
+  .topoInner { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+  .filtrosInner { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+  .inputBusca { width: 160px; }
+}
+@media (max-width: 520px) {
+  .gridGatos { grid-template-columns: 1fr; gap: 0.7rem; }
+  .inputBusca { width: 120px; }
+  .rodapeInner { flex-direction: column; gap: 0.45rem; align-items: center; }
+}
+/* ==========================================
+   ESTILO GLOBAL PARA INPUTS, SELECTS, TEXTAREAS
+========================================== */
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background-color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: 
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.18s ease;
+}
+
+/* Foco */
+/* Animações de foco que NÃO valem para .inputBusca */
+input:not(.inputBusca):focus,
+select:not(.inputBusca):focus,
+textarea:not(.inputBusca):focus {
+   border-color: #ffb700;
+  transform: scale(1.04);
+  box-shadow: 0 0 10px #ffcc4d,
+              0 0 20px rgba(255, 183, 0, 0.45);
+  outline: none;
+  animation: glow 0.8s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from {
+    box-shadow: 0 0 6px #ffd680,
+                0 0 14px rgba(255, 183, 0, 0.35);
+  }
+  to {
+    box-shadow: 0 0 12px #ffefa2,
+                0 0 26px rgba(255, 183, 0, 0.55);
+  }
+}
+
+
+/* Hover */
+input:hover, select:hover, textarea:hover {
+  transform: scale(1.02);
+  border-color: #ffd66c;
+}
+
+/* ==========================================
+   BOTÕES - ESTILO BASE
+========================================== */
+
+button,
+.botaoAdotar,
+.btnFiltro,
+.voltarBtn {
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: 
+    background 0.3s ease,
+    transform 0.18s ease,
+    box-shadow 0.3s ease;
+}
+
+.btnClear {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 
+    background 0.3s ease,
+    transform 0.18s ease,
+    box-shadow 0.3s ease;
+}
+
+.btnApply
+{
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 
+    background 0.3s ease,
+    transform 0.18s ease,
+    box-shadow 0.3s ease;
+}
+
+/* HOVER GENÉRICO */
+button:hover,
+.botaoAdotar:hover,
+.btnFiltro:hover,
+.btnApply:hover,
+.btnClear:hover,
+.voltarBtn:hover {
+  transform: scale(1.06);
+}
+
+/* ==========================================
+   ADOTAR (AMARELO)
+========================================== */
+.botaoAdotar {
+  background-color: var(--botao);
+  color: white;
+  box-shadow: 0 5px 18px rgba(253, 184, 29, 0.7);
+}
+.botaoAdotar:hover {
+  background-color: #ffc64e;
+  box-shadow: 0 6px 20px rgba(255, 200, 50, 0.85);
+}
+
+/* ==========================================
+   FILTRAR (COR #dc88eb)
+========================================== */
+.btnFiltro {
+  background-color: #dc88eb;
+  color: white;
+  box-shadow: 0 5px 18px rgba(220, 136, 235, 0.4);
+}
+.btnFiltro:hover {
+  background-color: #c86bdf;
+  box-shadow: 0 6px 20px rgba(220, 136, 235, 0.7);
+}
+
+/* ==========================================
+   APLICAR (ROXO CLARO)
+========================================== */
+.btnApply {
+  background-color: var(--roxo-claro);
+  color: white;
+  box-shadow: 0 5px 18px rgba(147, 85, 199, 0.45);
+}
+.btnApply:hover {
+  background-color: #b969e5;
+  box-shadow: 0 6px 20px rgba(147, 85, 199, 0.75);
+}
+
+/* ==========================================
+   LIMPAR (MESMA COR DO FILTRO)
+========================================== */
+.btnClear {
+  background-color: transparent;
+  color:#ffc64e;
+  border: 1px solid #ffc64e;
+  box-shadow: 0 5px 18px rgba(220, 136, 235, 0.35);
+}
+.btnClear:hover {
+  background-color: #e2a3f14d;
+  box-shadow: 0 6px 20px rgba(220, 136, 235, 0.75);
+}
+
+/* ==========================================
+   VOLTAR FLUTUANTE (AMARELO)
+========================================== */
+.voltarBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: var(--botao);
+  color: white;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.voltarBtn:hover {
+  background-color: #ffc64e;
+  box-shadow: 0 8px 20px rgba(255, 200, 50, 0.6);
+  transform: scale(1.12);
+}
+
+/* ==========================================
+   CARD PET – HOVER EXTRA OPCIONAL
+========================================== */
+.pet-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pet-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}

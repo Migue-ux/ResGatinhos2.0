@@ -1,0 +1,235 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body, html {
+  height: 100%;
+ 
+  background-color: #fff9f9;
+  color: #333;
+}
+
+
+.paginaAdotar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.topo {
+  
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 1em;
+  color: #ff758f;
+  
+}
+.topo h1
+{
+   font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #cf60e7bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.topo p
+{
+   font-size: 1.1rem;
+  color: #ffb404;
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.infoGatoSelecionado {
+  background-color: #ffe5ec;
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+  color: #ffb404;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.card {
+  background-color: transparent;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.formulario h2 {
+    font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #cf60e7bb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color:#333;
+}
+
+input, textarea, select {
+    padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-text-light);
+  box-shadow: inset 0 1px 6px rgba(255, 255, 255, 0.8),
+              0 3px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  resize: none;
+  margin: 8px 0 16px 0;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #e2b932;
+  box-shadow: 0 0 10px #ffaf0266;
+  background: #fff;
+}
+
+textarea {
+  resize: none; 
+}
+
+
+.contador {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+   width: 50%;
+  padding: 14px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+   background-color: #FDB81D;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 18px #fdba1dc2;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #fdba1dc2;
+  transform: scale(1.05);
+}
+
+.botaoReset {
+  
+   margin-top: 12px;
+  width:100%;
+  padding: 12px 0;
+  border-radius: 16px;
+  border: 2px solid #fdba1d;
+  background: transparent;
+  color: #000000;;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoReset:hover {
+  background-color: #fdba1dc2;
+  color: white;
+}
+
+
+.rodape {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ffe5ec;
+  color: #333;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+.voltarBtn {
+  position: fixed;
+  top: calc(20px + env(safe-area-inset-top));
+  right: calc(20px + env(safe-area-inset-right));
+  background-color: #FDB81D;
+  color: #fff;
+  border: none;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* garante que fique acima de tudo */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  padding: 0;
+}
+
+.voltarBtn:hover {
+  background-color: #fdba1db2;
+  transform: scale(1.1);
+}

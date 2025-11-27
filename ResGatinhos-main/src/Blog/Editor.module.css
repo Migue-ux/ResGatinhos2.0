@@ -1,0 +1,128 @@
+
+:root {
+
+  --text-color: #f1f1f1;
+  --accent1: #ffb91d; 
+  --accent2: #9a26e7; 
+  --shadow-base: rgba(0, 0, 0, 0.4);
+  --input-border: rgba(255, 255, 255, 0.15);
+  --text-color: #f1f1f1;
+  --panel-bg:  linear-gradient(to bottom, #cb8ac4, #cd7ec4, #cf71c5, #d164c4, #d354c4); /* Fundo do card */
+  --page-bg: #ffb71dc2;
+  --shadow-base: rgba(160, 56, 230, 0.6);
+  --shadow-hover: rgba(175, 54, 245, 0.74); 
+  --tag-bg: #c193dbc0; 
+  --color-bg-light: #d9c1f833;
+   --transition-time: 0.3s;
+   --muted-color: #a0a0a0; 
+
+}
+
+
+.editorWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: var(--panel-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-base);
+}
+
+
+.titleInput,
+.categoryInput,
+.editor {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--page-bg); /* Fundo sutilmente mais escuro */
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  box-shadow: inset 0 2px 5px var(--shadow-base);
+  transition: all 0.3s ease;
+}
+
+/* Foco nos Inputs e Editor (Efeito Glow) */
+.titleInput:focus,
+.categoryInput:focus,
+.editor:focus {
+  outline: none;
+  border-color: var(--accent1); /* Borda amarela/laranja no foco */
+  box-shadow: 0 0 8px rgba(255, 185, 29, 0.4), inset 0 2px 5px var(--shadow-base);
+}
+
+.titleInput {
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 16px;
+}
+
+.categoryInput {
+  font-size: 1rem;
+}
+
+.editor {
+  height: 350px; /* Um pouco mais alto */
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+/* 3. Botão de Publicação */
+.publishBtn {
+  background: var(--accent2); /* Roxo vibrante */
+  color: var(--text-color); /* Texto claro */
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.publishBtn:hover {
+  background: #a842f7; /* Roxo ligeiramente mais claro */
+  transform: translateY(-2px); /* Efeito de elevação */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.publishBtn:active {
+  transform: translateY(0);
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Padrão */
+}
+/* Deixa os títulos mais ousados */
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; /* Adiciona um leve "aperto" para um visual mais moderno */
+}
+
+.editorHeader
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.cancelBtn {
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+}
+
+.cancelBtn:hover {
+    background-color: #da190b;
+}

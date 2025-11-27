@@ -1,0 +1,654 @@
+
+:root {
+  --roxo-principal: #6c1a7e;
+  --roxo-claro: #c981d1;
+  --rosa: #ffd7ef;
+  --branco: #ffffff;
+  --cinza: #f7f7f7;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --transicao: all 0.3s ease-in-out;
+}
+
+
+.heroSection {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.heroImg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.whyVolunteerSection {
+    margin-top: 30px;
+    padding: 40px 15px;
+    background-color: rgba(203, 138, 196, 1);
+    color: black;
+    text-align: center;
+    width: 100%;
+}
+
+.whyVolunteerTitle {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.whyVolunteerText {
+    max-width: 800px;
+    margin: 10px auto;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.servicesContainer {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.cardsGrid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.flipCard {
+    background-color: transparent;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    font-family: 'Inter', sans-serif;
+}
+
+.cardTitle {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 1.3;
+}
+
+.flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCardInner {
+    transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 1rem;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.flipCardFront {
+    background: linear-gradient(120deg, #ffc73a 60%, #ffb01d 88%, #ffd964 40%);
+    color: #4a00e0;
+    border: 1px solid #ffb01d;
+}
+
+.flipCardBack {
+    background: linear-gradient(120deg, #9950a4 30%, #8e2de2 88%, #cbb9d0 40%);
+    color: white;
+    transform: rotateY(180deg);
+    border: 1px solid #8e2de2;
+}
+
+.cardIcon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #4a00e0;
+}
+
+.flipCardBack .cardIcon {
+    color: white;
+}
+
+.cardBackText {
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+.formSection {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.formSection>p {
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(134, 29, 132);
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cbb9d0;
+    box-sizing: border-box;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(134, 29, 132);
+    margin-bottom: 5px;
+}
+
+.message {
+    font-size: 16px;
+    color: rgba(134, 29, 132, 0.678);
+    margin-bottom: 18px;
+    margin-top: 1px;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.form label {
+    position: relative;
+    width: 100%;
+}
+
+.form label .input {
+    background-color: #FFFFFF;
+    color: #6d0188;
+    font-size: 16px;
+    width: 100%;
+    padding: 18px 10px 10px 10px;
+    outline: 0;
+    border: 1px solid #cbb9d0;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.form label .textarea {
+    min-height: 100px;
+    resize: none;
+    padding: 18px 10px 10px 10px;
+    outline: 0;
+    border: 1px solid #cbb9d0;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #6d0188;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form label .input+span,
+.form label .textarea+span {
+    color: #6d0188;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    font-size: 0.7em;
+    cursor: text;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.form label .input:placeholder-shown+span,
+.form label .textarea:placeholder-shown+span {
+    top: 10px;
+    font-size: 1em;
+    color: #8b5c9e;
+    left: 15px;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span,
+.form label .textarea:focus+span,
+.form label .textarea:valid+span {
+    color: #a109c7;
+    font-family: Arial, sans-serif;
+    top: 2px;
+    font-size: 0.75em;
+    font-weight: 600;
+    left: 15px;
+}
+
+.submit {
+    background-color: #FFB700;
+    color: #6d0188;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow:
+        5px 5px 15px rgba(0, 0, 0, 0.1),
+        -5px -5px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.2s ease;
+}
+
+.submit:hover {
+    background-color: #FFA500;
+    box-shadow:
+        8px 8px 18px rgba(0, 0, 0, 0.15),
+        -8px -8px 18px rgba(255, 255, 255, 0.8);
+}
+
+.submit:active {
+    transform: scale(0.98);
+    box-shadow:
+        inset 3px 3px 7px rgba(0, 0, 0, 0.1),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.7);
+    background-color: #d18a20;
+}
+
+.infoMessage {
+    font-size: 16px;
+    color: rgba(134, 29, 132, 0.678);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.footer {
+    background-color: #d29fd6;
+    color: #000000;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContent {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footerContact,
+.footerPartners,
+.footerCat {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footerContact h3,
+.footerPartners h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footerContact p,
+.footerPartners p {
+    margin: 4px 0;
+}
+
+.socialIcons {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.socialIcons img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+
+.socialIcons img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.footerCat {
+    align-items: flex-end;
+}
+
+.catMessage {
+    background-color: #9950a4;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    max-width: 180px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.catMessage::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    right: 25px;
+    border-width: 12px 10px 0;
+    border-style: solid;
+    border-color: #9950a4 transparent transparent transparent;
+}
+
+.catImage {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (max-width: 991px) {
+    .cardsGrid {
+        gap: 20px;
+    }
+
+    .flipCard {
+        width: 45%;
+        max-width: 300px;
+        height: 280px;
+    }
+
+    .footerContent {
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
+    .footerContact,
+    .footerPartners {
+        min-width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .whyVolunteerTitle {
+        font-size: 26px;
+    }
+
+    .whyVolunteerText {
+        font-size: 16px;
+    }
+
+    .servicesContainer {
+        padding: 40px 10px;
+    }
+
+    .formSection {
+        padding: 20px 10px;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .flipCard {
+        width: 90%;
+        height: 250px;
+    }
+
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footerContact,
+    .footerPartners,
+    .footerCat {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+        align-items: center;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+
+    .footerCat {
+        align-items: center;
+    }
+
+    .catMessage {
+        margin-right: 0;
+    }
+
+    .catMessage::after {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+
+
+
+/* Doação */
+.doacao {
+  text-align: center;
+  background: #fdf6f0;
+  padding: 80px 5%;
+}
+.doacaoBox {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.doacaoBox img {
+  width: 130px;
+  border-radius: 10px;
+}
+.doacaoBox a {
+  color: #d354c4;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+/* ===== FOOTER (Rodapé) ===== */
+.rodape {
+  background: linear-gradient(180deg, var(--roxo-principal) 0%, #2b1b4b 100%);
+  color: #fff;
+  padding: 60px 20px 30px;
+  animation: fadeInUp 1.4s ease;
+  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.3);
+}
+
+.containerRodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.coluna, .colunaNewsletter {
+  flex: 1 1 230px;
+  min-width: 200px;
+}
+
+.coluna h3, .colunaNewsletter h3 {
+  color: #ffb800;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coluna p, .coluna ul, .colunaNewsletter p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.coluna ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coluna ul li {
+  margin-bottom: 6px;
+}
+
+.coluna ul li a {
+  color: #ffffffcc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.coluna ul li a:hover {
+  color: #ffb800;
+}
+
+/* Newsletter */
+.formNewsletter {
+  display: flex;
+  margin-top: 10px;
+}
+
+.formNewsletter input {
+  flex: 1;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.formNewsletter button {
+  background: #ffb800;
+  border: none;
+  color: #2b1b4b;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formNewsletter button:hover {
+  background: #ffc83d;
+  transform: scale(1.05);
+}
+
+/* Frase + gato */
+.fraseArea {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.frase {
+  font-style: italic;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.gato {
+  width: 90px;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Redes sociais */
+.socialSection {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.socialTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.paws {
+  animation: pawsMove 2.5s infinite ease-in-out;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.socialIcons a {
+  color: #ffffffcc;
+  font-size: 1.9rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.socialIcons a:hover {
+  color: #ffb800;
+  transform: translateY(-4px) scale(1.1);
+  text-shadow: 0 0 12px #ffb800;
+}
+
+/* Direitos */
+.copy {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 15px;
+}
+
+/* Animações */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pawsMove {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-4px); opacity: 0.8; }
+}

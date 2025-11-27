@@ -1,0 +1,83 @@
+/* --- Variáveis (Para consistência) --- */
+:root {
+  --text-color: #f1f1f1;
+  ---panel-bg:  linear-gradient(to bottom, #cb8ac4, #cd7ec4, #cf71c5, #d164c4, #d354c4); /* Fundo do card */
+  --content-bg: #1e2127; /* Fundo do conteúdo interno (para contraste) */
+  --muted-color: #a0a0a0; /* Cor para texto secundário (data, etc.) */
+  --accent1: #ffb91d; 
+  --shadow-base: rgba(0, 0, 0, 0.4);
+}
+.commentbody {
+  background: var(--content-bg); /* Fundo do conteúdo do comentário */
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 5px var(--shadow-base);
+  gap: 18px;
+}
+.comment {
+  display: flex;
+  gap: 16px; /* Aumentei o espaço para melhor separação */
+  
+  /* Usa o fundo do Painel para o container do comentário */
+  background: var(--panel-bg); 
+  
+  padding: 18px; /* Mais padding */
+  width: 35em;
+  height: 8em;
+  margin: auto;
+  margin-top: 1em;
+  border-radius: 12px; /* Cantos mais suaves */
+  
+  /* Sombra sutil para destacar o bloco */
+  box-shadow: 0 4px 10px var(--shadow-base); 
+  
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+/* Efeito sutil ao passar o mouse */
+.comment:hover {
+  transform: translateY(-1px);
+}
+
+/* Avatar (Imagem) */
+.comment img {
+  width: 48px; /* Ligeiramente maior */
+  height: 48px;
+  border-radius: 50%; /* Mudança para avatar circular */
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--accent1); /* Borda de destaque sutil */
+}
+
+/* Conteúdo (Autor e Texto) - Wrapper do texto e info */
+.commentContent {
+  flex-grow: 1;
+
+}
+
+/* O parágrafo que contém o texto do comentário */
+.comment p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--text-color); /* Texto principal mais claro */
+  
+  /* Se houver um elemento de data/autor, use a cor muted para ele */
+}
+
+/* Se você tiver um elemento de data ou meta-informação */
+.comment .timestamp {
+    font-size: 0.8rem;
+    color: var(--muted-color);
+    margin-top: 4px;
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Padrão */
+}
+/* Deixa os títulos mais ousados */
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; /* Adiciona um leve "aperto" para um visual mais moderno */
+}

@@ -1,0 +1,64 @@
+/* --- Variáveis (Para consistência) --- */
+:root {
+  --text-color: #f1f1f1;
+  --muted-color: #a0a0a0; /* Cor para texto secundário */
+  --panel-bg: #282c34; /* Fundo do card */
+  --accent1: #ffb91d; /* Destaque (pode ser usado na borda de foco) */
+  --shadow-base: rgba(0, 0, 0, 0.6);
+  --shadow-hover: rgba(255, 185, 29, 0.3); /* Sombra amarela/laranja no hover */
+}
+
+.card {
+  background: var(--panel-bg);
+  padding: 24px; /* Aumentei um pouco o padding */
+  border-radius: 16px; /* Mais arredondado */
+  cursor: pointer;
+  
+  /* Transição em tudo para suavidade */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  
+  /* Sombra inicial mais elegante */
+  box-shadow: 0 4px 15px var(--shadow-base); 
+  
+  /* Borda sutil para dar um toque final */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Efeito Hover (Interação "Lift and Glow") */
+.card:hover {
+  /* Eleva o card */
+  transform: translateY(-5px); 
+  
+  /* Sombra mais forte e com um toque da cor de destaque */
+  box-shadow: 0 15px 30px var(--shadow-base), 0 0 15px var(--shadow-hover);
+}
+
+.title {
+  font-size: 1.35rem; /* Título mais proeminente */
+  font-weight: 700; /* Mais ousado */
+  margin-bottom: 10px;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+.preview {
+  font-size: 1rem; /* Ligeiramente maior para melhor leitura */
+  color: var(--muted-color);
+  line-height: 1.5;
+  /* Limita o preview a duas linhas, adicionando reticências */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400; /* Padrão */
+}
+/* Deixa os títulos mais ousados */
+.title, h1, h2 {
+  color:#ffb91d ;
+  font-weight: 700; 
+  letter-spacing: -0.5px; /* Adiciona um leve "aperto" para um visual mais moderno */
+}
