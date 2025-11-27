@@ -763,6 +763,8 @@ useEffect(() => {
         <li><Link to="/voluntario">Seja Voluntário</Link></li>
         <li><Link to="/match">Match</Link></li>
         <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/EventsPage">Eventos</Link></li>
+        <li><Link to="/EventDetails">Eventos Detalhes</Link></li>
         
       </ul>
     </div>

@@ -73,7 +73,7 @@ function App() {
 
             {/* === BLOG === */}
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/post/:id" element={<BlogPost />} /> {/* BlogPost usará useAuth */}
+            <Route path="/blog/post/:id" element={<BlogPost />} /> 
             <Route path="/blog/editor" element={<Editor />} />
 
             {/* ERROR */}
